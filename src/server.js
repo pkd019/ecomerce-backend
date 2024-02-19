@@ -4,8 +4,9 @@ const helmet = require('helmet');
 const cors = require('cors');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
+require('dotenv').config();
+mongoose.connect(`mongodb+srv://pdas0354158:${process.env.MONGODB_PASSWORD}@cluster0.refnh83.mongodb.net/ecomerce?retryWrites=true&w=majority`);
 
-mongoose.connect("mongodb+srv://pdas0354158:Pkd019@cluster0.refnh83.mongodb.net/ecomerce?retryWrites=true&w=majority");
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
