@@ -15,11 +15,18 @@ app.use(helmet());
 app.use(cors());
 const port = 4000;
 
+const UserRoutes = require("./route/user_router");
+app.use('/api/user', UserRoutes);
+ 
+const CatagoryRoutes = require("./route/catagory");
+app.use('/api/catagory', CatagoryRoutes);
+
+const ItemRoutes = require("./route/item");
+app.use('/api/item', ItemRoutes);
+
+const CartRoutes = require("./route/cartroutes");
+app.use('/api/cart', CartRoutes);
+ 
 app.listen(port, () => {
   console.log(`Your app connected to: ${port}`);
 });
-
-const UserRoutes = require("./route/user_router");
-
-app.use('/api/user', UserRoutes);
- 
