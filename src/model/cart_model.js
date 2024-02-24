@@ -5,6 +5,7 @@ cartItemSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Item',
         required: true,
+        required: true,
     },
     quantity: {
         type: Number,

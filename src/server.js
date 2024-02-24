@@ -27,6 +27,9 @@ app.use('/api/item', ItemRoutes);
 const CartRoutes = require("./route/cartroutes");
 app.use('/api/cart', CartRoutes);
  
+const OrderRoute = require("./route/orderroute");
+app.use('/api/order', OrderRoute);
+ 
 app.listen(port, () => {
   console.log(`Your app connected to: ${port}`);
 });
