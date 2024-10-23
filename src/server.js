@@ -22,7 +22,7 @@ const PORT = process.env.PORT | 3000;
     app.on("error",(e)=>{console.log("error",e)})
 
     app.listen(PORT, () => {
-      console.log(`Your app connected to: ${port}`);
+      console.log(`Your app connected to: ${PORT}`);
     });
     
   }
