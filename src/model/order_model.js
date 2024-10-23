@@ -1,8 +1,9 @@
-const {Schema ,model} = require('mongoose');
+const {Schema ,model, default: mongoose} = require('mongoose');
 
 const orderItemSchema = new Schema({
     item: {
-        type: Map,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Item',
         
         required: true,
     },
@@ -24,6 +25,7 @@ const orderSchema = new Schema({
     },
     orderStatus: {
         type: String,
+        enum: ['pending', 'shipped', 'delivered'],
         default: "Pending",
         required: true,
     },

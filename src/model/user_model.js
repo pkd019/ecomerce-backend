@@ -23,6 +23,10 @@ const userschema =new  Schema( {
 
         default: ""    },
 
+        gender:{
+            type: String,default: ''
+        },
+
 
     addresses: {type: String,default: ""},
     city:{type: String,default: ""},
@@ -35,7 +39,11 @@ const userschema =new  Schema( {
     createon:{type: Date},
 
     
-})
+},
+{
+time
+}
+)
 
 userschema.pre("save", function(next){
     this.id = uuid.v1();
